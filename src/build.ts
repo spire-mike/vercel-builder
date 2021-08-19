@@ -67,7 +67,9 @@ export async function build (opts: BuildOptions & { config: NuxtBuilderConfig })
   const spawnOpts = getSpawnOptions(meta, nodeVersion)
 
   // Prepare TypeScript environment if required.
-  const usesTypescript = (pkg.devDependencies && Object.keys(pkg.devDependencies).includes('@nuxt/typescript-build')) || (pkg.dependencies && Object.keys(pkg.dependencies).includes('@nuxt/typescript'))
+  const usesTypescript = (pkg.devDependencies && Object.keys(pkg.devDependencies).includes('@nuxt/typescript-
+                                                                                           
+                                                                                           ')) || (pkg.dependencies && Object.keys(pkg.dependencies).includes('@nuxt/typescript'))
   const needsTypescriptBuild = getNuxtConfigName(entrypointPath) === 'nuxt.config.ts'
 
   if (usesTypescript) {
@@ -165,6 +167,7 @@ export async function build (opts: BuildOptions & { config: NuxtBuilderConfig })
     '--standalone',
     '--no-lock', // #19
     `--config-file "${nuxtConfigName}"`,
+    '--dotenv false',
     entrypointPath
   ], spawnOpts)
 
