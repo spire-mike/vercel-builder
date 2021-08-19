@@ -159,7 +159,7 @@ export async function build (opts: BuildOptions & { config: NuxtBuilderConfig })
   const srcDir = nuxtConfigFile.srcDir ? path.relative(entrypointPath, nuxtConfigFile.srcDir) : '.'
   const lambdaName = nuxtConfigFile.lambdaName ? nuxtConfigFile.lambdaName : 'index'
   const usesServerMiddleware = config.internalServer !== undefined ? config.internalServer : !!nuxtConfigFile.serverMiddleware
-
+  console.log('Logging STORE_HASH', process.env.STORE_HASH);
   await exec('nuxt', [
     'build',
     '--standalone',
