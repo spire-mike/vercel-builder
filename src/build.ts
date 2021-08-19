@@ -167,7 +167,7 @@ export async function build (opts: BuildOptions & { config: NuxtBuilderConfig })
     '--standalone',
     '--no-lock', // #19
     `--config-file "${nuxtConfigName}"`,
-    '--dotenv false',
+    '--dotenv "false"',
     entrypointPath
   ], spawnOpts)
 
